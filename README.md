@@ -1,7 +1,7 @@
-# README
+# Grants
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README will document whatever steps are necessary to get the
+application up and running. For now, this is a WIP.
 
 Things you may want to cover:
 
