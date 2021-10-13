@@ -25,8 +25,10 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
-# User OX to parse XML files
+# Use OX to parse XML files
 gem 'ox'
+# Use interactors to encapsulate business logic
+gem 'interactor-rails', '~> 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
