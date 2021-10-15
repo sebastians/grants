@@ -6,12 +6,14 @@ RSpec.describe ParseTaxFilling do
 
     subject { described_class.call(xml_file: xml_file) }
 
-    it "parses the XML file into a Hash" do
-      expect(subject.parsed_filling).to be_a Hash
+    it "parses the XML file into an Ox::Element" do
+      expect(subject.parsed_filling).to be_an Ox::Element
     end
 
     it "sets parsed_filling to the parsed content of the XML file" do
-      expect(subject.parsed_filling[:Return].third[:ReturnData].count).to eq 8
+      expect(subject.parsed_filling.nodes.first.value).to eq "ReturnHeader"
+      expect(subject.parsed_filling.nodes.second.value).to eq "ReturnData"
+      expect(subject.parsed_filling.nodes.second.attributes).to eq({ documentCount: "7" })
     end
   end
 end
