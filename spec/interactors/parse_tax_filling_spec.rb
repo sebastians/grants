@@ -16,5 +16,13 @@ RSpec.describe ParseTaxFilling do
       expect(subject.awards_path.size).to eq 771
       expect(subject.awards_path.first.value).to eq "RecipientNameBusiness"
     end
+
+    context "when xml_file is missing" do
+      subject { described_class.call }
+
+      it "fails" do
+        expect(subject).to be_failure
+      end
+    end
   end
 end

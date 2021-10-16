@@ -4,6 +4,8 @@ class ParseTaxFilling
   FILER_PATH = "Return/ReturnHeader/Filer/*"
   AWARDS_PATH = "Return/ReturnData/IRS990ScheduleI/RecipientTable/*"
 
+  before { context.fail! unless context.xml_file }
+
   def call
     context.filer_nodes = parsed_filling.locate(FILER_PATH)
     context.awards_path = parsed_filling.locate(AWARDS_PATH)
