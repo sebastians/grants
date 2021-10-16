@@ -6,7 +6,7 @@ class CreateFilers < ActiveRecord::Migration[6.1]
       t.string :address
       t.string :city
       t.string :state
-      t.integer :zip_code
+      t.string :zip_code
 
       t.timestamps
     end

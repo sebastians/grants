@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_10_16_001639) do
     t.string "address"
     t.string "city"
     t.string "state"
-    t.integer "zip_code"
+    t.string "zip_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
