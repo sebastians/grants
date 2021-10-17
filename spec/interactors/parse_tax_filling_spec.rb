@@ -6,15 +6,8 @@ RSpec.describe ParseTaxFilling do
 
     subject { described_class.call(xml_file: xml_file) }
 
-    it "sets filer_nodes to an Array with Filer nodes" do
-      expect(subject.filer_nodes).to be_an Array
-      expect(subject.filer_nodes.first.value).to eq "EIN"
-    end
-
-    it "sets awards_path to an Array with Awards nodes" do
-      expect(subject.awards_path).to be_an Array
-      expect(subject.awards_path.size).to eq 771
-      expect(subject.awards_path.first.value).to eq "RecipientNameBusiness"
+    it "sets parsed_filing to an Ox::Document instance" do
+      expect(subject.parsed_filing).to be_an Ox::Document
     end
 
     context "when xml_file is missing" do
