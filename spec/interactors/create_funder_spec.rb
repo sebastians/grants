@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe CreateFunder do
   describe ".call" do
     let(:xml_file) { file_fixture("irs-form-990.xml").read }
-    let(:parsed_filing) { ParseTaxFiling.call(xml_file: xml_file) }
+    let(:parsed_filing) { Ox.load(xml_file) }
 
     subject { described_class.call(parsed_filing: parsed_filing) }
 
