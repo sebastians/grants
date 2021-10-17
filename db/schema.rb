@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_10_16_010331) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "filers", force: :cascade do |t|
+  create_table "funders", force: :cascade do |t|
     t.integer "ein"
     t.string "name"
     t.string "address"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_10_16_010331) do
     t.string "zip_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["ein"], name: "index_filers_on_ein", unique: true
+    t.index ["ein"], name: "index_funders_on_ein", unique: true
   end
 
 end

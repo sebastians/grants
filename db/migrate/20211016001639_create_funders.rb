@@ -1,6 +1,6 @@
-class CreateFilers < ActiveRecord::Migration[6.1]
+class CreateFunders < ActiveRecord::Migration[6.1]
   def change
-    create_table :filers do |t|
+    create_table :funders do |t|
       t.integer :ein
       t.string :name
       t.string :address
