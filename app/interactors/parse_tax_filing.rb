@@ -1,4 +1,4 @@
-class ParseTaxFilling
+class ParseTaxFiling
   include Interactor
 
   before { context.fail! unless context.xml_file }

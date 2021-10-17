@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe ParseTaxFilling do
+RSpec.describe ParseTaxFiling do
   describe ".call" do
     let(:xml_file) { file_fixture("irs-form-990.xml").read }
 
