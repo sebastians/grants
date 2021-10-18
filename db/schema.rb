@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_10_16_010331) do
     t.string "zip_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "type"
     t.index ["ein"], name: "index_funders_on_ein", unique: true
   end
 
