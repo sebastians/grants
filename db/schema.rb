@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_17_235822) do
+ActiveRecord::Schema.define(version: 2021_10_18_042819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,8 @@ ActiveRecord::Schema.define(version: 2021_10_17_235822) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "type"
-    t.index ["ein"], name: "index_funders_on_ein", unique: true
+    t.index ["ein", "type"], name: "index_funders_on_ein_and_type", unique: true
+    t.index ["ein"], name: "index_funders_on_ein"
   end
 
   add_foreign_key "awards", "funders"
