@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_16_010331) do
+ActiveRecord::Schema.define(version: 2021_10_17_235822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "awards", force: :cascade do |t|
+    t.integer "amount"
+    t.string "purpose"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "funder_id"
+    t.bigint "recipient_id"
+    t.index ["funder_id"], name: "index_awards_on_funder_id"
+    t.index ["recipient_id"], name: "index_awards_on_recipient_id"
+  end
 
   create_table "funders", force: :cascade do |t|
     t.integer "ein"
@@ -28,4 +39,6 @@ ActiveRecord::Schema.define(version: 2021_10_16_010331) do
     t.index ["ein"], name: "index_funders_on_ein", unique: true
   end
 
+  add_foreign_key "awards", "funders"
+  add_foreign_key "awards", "funders", column: "recipient_id"
 end

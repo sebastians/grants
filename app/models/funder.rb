@@ -1,3 +1,4 @@
 class Funder < ApplicationRecord
-  validates_uniqueness_of :ein
+  validates :ein, uniqueness: true
+  has_many :awards, as: :grants
 end
